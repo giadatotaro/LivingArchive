@@ -1,4 +1,4 @@
-#N canvas 54 30 733 668 12;
+#N canvas 626 23 733 668 12;
 #X obj -85 272 unpack 0 0 0;
 #X floatatom -85 304 5 0 0 0 X - -;
 #X floatatom -45 340 5 0 0 0 Y - -;
@@ -24,14 +24,21 @@
 #X floatatom 446 340 5 0 0 0 Y - -;
 #X floatatom 487 366 5 0 0 0 Z - -;
 #X text 412 249 finger 4;
-#X obj -85 27 /Applications/Pd-extended.app/Contents/Resources/extra/net/udpreceive
-5432;
 #X obj -85 95 /Applications/Pd-extended.app/Contents/Resources/extra/osc/unpackOSC
 ;
 #X obj -85 152 /Applications/Pd-extended.app/Contents/Resources/extra/osc/pipelist
 ;
 #X obj -85 210 /Applications/Pd-extended.app/Contents/Resources/extra/osc/routeOSC
 /0 /1 /2 /3 /4;
+#X obj -86 27 /Applications/Pd-extended.app/Contents/Resources/extra/net/udpreceive
+5432;
+#X msg -86 -2 port 5432;
+#X obj -86 -26 loadbang;
+#X obj -67 419 outlet;
+#X obj 66 418 outlet;
+#X obj 170 422 outlet;
+#X obj 303 421 outlet;
+#X obj 403 418 outlet;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 0 2 3 0;
@@ -48,11 +55,18 @@
 #X connect 20 1 22 0;
 #X connect 20 2 23 0;
 #X connect 25 0 26 0;
+#X connect 25 1 26 1;
 #X connect 26 0 27 0;
-#X connect 26 1 27 1;
-#X connect 27 0 28 0;
-#X connect 28 0 0 0;
-#X connect 28 1 5 0;
-#X connect 28 2 10 0;
-#X connect 28 3 14 0;
-#X connect 28 4 20 0;
+#X connect 27 0 0 0;
+#X connect 27 0 31 0;
+#X connect 27 1 5 0;
+#X connect 27 1 32 0;
+#X connect 27 2 10 0;
+#X connect 27 2 33 0;
+#X connect 27 3 14 0;
+#X connect 27 3 34 0;
+#X connect 27 4 20 0;
+#X connect 27 4 35 0;
+#X connect 28 0 25 0;
+#X connect 29 0 28 0;
+#X connect 30 0 29 0;
